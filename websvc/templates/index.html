@@ -1,0 +1,304 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>MAA Wizard</title>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.6.4.min.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/easySlider1.7.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/password.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.maskedinput-1.3.min.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/video.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/handler.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/AsyncRequest.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/modernizr.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/video-sub.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/mootools-core-1.4.1-full-compat.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.splashscreen.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/teatree.js') }}" charset="utf-8"></script>
+
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" type="text/css" media="screen" />
+    <link href="{{ url_for('static', filename='css/splashscreen.css') }}" rel="stylesheet" type="text/css" media="screen" />
+    <link href="{{ url_for('static', filename='css/screen.css') }}" rel="stylesheet" type="text/css" media="screen" />
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#novice").click(function (e) {
+                e.preventDefault();
+            });
+            $("#expert").click(function (e) {
+                e.preventDefault();
+            });
+
+
+            // Next Steps button clicked
+            $(".button").click(function () {
+                if ($(this).attr('id') == "m_install") {
+                    jQuery('[rel="1"]').click();
+                }
+                if ($(this).attr('id') == "m_VideoNextStep") {
+                    jQuery('[rel="2"]').click();
+                }
+                if ($(this).attr('id') == "m_UserNextStep") {
+                    jQuery('[rel="3"]').click();
+                }
+                if ($(this).attr('id') == "m_GetProtectedNextStep") {
+                    jQuery('[rel="4"]').click();
+                }
+                if ($(this).attr('id') == "m_TextmeNextStep") {
+                    jQuery('[rel="5"]').click();
+                }
+                if ($(this).attr('id') == "m_NextStep") {
+                    jQuery('[rel="6"]').click();
+                }
+                if ($(this).attr('id') == "m_RegisterNextStep") {
+                    alert("Thank You for registering");
+                }
+            });
+
+            // Next Steps button clicked
+            $(".backButton").click(function (event) {
+                if ($(this).attr('id') == "m_VideoBack") {
+                    jQuery('[rel="0"]').click();
+                    event.preventDefault();
+                }
+                if ($(this).attr('id') == "m_UserBack") {
+                    jQuery('[rel="1"]').click();
+                    event.preventDefault();
+                }
+                if ($(this).attr('id') == "m_GetProtectedBack") {
+                    jQuery('[rel="2"]').click();
+                    event.preventDefault();
+                }
+                if ($(this).attr('id') == "m_TextmeBack") {
+                    jQuery('[rel="3"]').click();
+                    event.preventDefault();
+                }
+                if ($(this).attr('id') == "m_NextStepBack") {
+                    jQuery('[rel="4"]').click();
+                    event.preventDefault();
+                }
+                if ($(this).attr('id') == "m_RegisterBack") {
+                    //jQuery('[rel="5"]').click();
+                    alert("You have not registered!!!...But you will be spammed");
+                    event.preventDefault();
+                }
+            });
+        });            
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $.mask.definitions['~'] = "[+-]";
+            $("#m_PhoneNumber").mask("(999) 999-9999? x99999");
+            //$("#m_PhoneNumber").mask("+99-9999-9999");
+        });
+        $('video').videoSub({
+            containerClass: 'videosub-container',
+            barClass: 'videosub-bar',
+            useBarDefaultStyle: true
+        });
+        $('video').videoSub();
+    </script>
+    <script type="text/javascript">
+        var files = [document.getElementById("dragout"), document.getElementById("dragout2")], fileDetails = [];
+        if (typeof files[0].dataset === "undefined") {
+            fileDetails[0] = files[0].getAttribute("data-downloadurl");
+        } else {
+            fileDetails[0] = files[0].dataset.downloadurl;
+        }
+        files[0].addEventListener("dragstart", function (evt) { evt.dataTransfer.setData("DownloadURL", fileDetails[0]); }, false);
+    </script>
+   
+</head>
+<body>
+    <div id="page">
+        <!--<div id="topBar"></div>-->
+        <div id="promoIMG">
+            <!--<img src="images/available_now.png" alt="Available Now" />-->
+            <!--<object type="image/svg+xml" data="images/logo.svg"></object>-->
+            <div id="main">
+                <header id="mainHeader">
+          <hgroup>
+    <nav><img src="{{ url_for('static', filename='images/logo.gif') }}"> <span class="search">
+      <label for="Search">Search</label>
+      <input id="m_Search" type="text" width="40" height="24" />
+      </span>
+              </li>
+            </nav>
+  </hgroup>
+        </header>
+                <div id="container">
+                    <div id="header">
+                        <h4>
+                            :::::::::::::::::::::::::::::::::::::::::: McAfee All Access Wizardomercial ::::::::::::::::::::::::::::::::::::::::::</h4>
+                    </div>
+                    <div id="content">
+                        <div id="slider">
+                            <ul>
+                                <li>
+                                    <section id="thankyou">
+                  <div class="confirm"> <img src="{{ url_for('static', filename='images/check.png') }}"> <span>Your purchase
+                    has been processed. Thanks for shopping.</span> </div>
+                  <hr>
+                  <article class="receipt">
+            <h3> Your Order #: MCA 1234567</h3>
+            <p>A copy of this receipt has been sent to maauser@receipt.com</p>
+            <br />
+
+            <table>
+                      <tr>
+                <th>Billing Address:</th>
+                <td>123 market street<br>
+                          San Francisco, CA 94111 <br>
+                          415-123-1234</td>
+                <th>Shipping Address:</th>
+                <td>Same as billing</td>
+                <th>Drag your receipt file (PDF) into your desktop: </th>
+                <td><a href="html5-cheat-sheet.pdf" id="dragout" class="dragme" draggable="true" data-downloadurl="application/pdf:HTML5CheatSheet.pdf:http://www.thecssninja.com/demo/gmail_dragout/html5-cheat-sheet.pdf"> 
+                <img src="{{ url_for('static', filename='images/PDF.png') }}">Receipt - PDF</a>
+                </td>
+              </tr>
+                    </table>
+          </article>
+                  <span class="btn-area">
+          <button class="button" id="m_learnmore" value="Learn how to install">Learn how to install</button>
+          <span id="divider"> | </span>
+          <button class="button" id="m_install" value="Install now">Install now</button>
+          </span> </section>
+                                </li>
+                                <li>
+                                    <section id="learnmore">
+                  <h2> MAA Learn More</h2>
+                  <hr>
+                  <!-- Begin VideoJS -->
+                  <div class="video-js-box">
+                    <video id="example_video_1" class="video-js" width="640" height="264" controls="controls"
+                                    preload="auto" poster="{{ url_for('static', filename='images/video.png') }}">
+                      <source src="{{ url_for('static', filename='vids/oceans-clip.webm') }}" type='video/webm; codecs="vp8, vorbis"' />
+                      <track src="{{ url_for('static', filename='vids/oceans-clip.srt') }}" kind="subtitle" srclang="en-US" label="English" />
+                    </video>
+                    </div>
+                  <!-- End VideoJS --> 
+
+                  <span class="btn-area"><a href="" class="backButton" id="m_VideoBack">Back</a> <span id="divider"> | </span>                  
+                  <button class="button" id="m_VideoNextStep" value="Install now">Next Step</button>
+          </span> </section>
+                                </li>
+                                <li>
+                                    <section id="whatuserareyou">
+                  <h2> What user you are? </h2>
+                  <hr>
+                  <article>
+            <h3>Choose who you are:</h3>
+            <a href="" id="novice"> <img src="{{ url_for('static', filename='images/novice.png') }}"> Novice: <span>I am not familiar with software installation.</span> </a> <a href="" id="expert"> 
+            <img src="{{ url_for('static', filename='images/expert.png') }}"> Expert: <span>I am familiar with software installation.</span></a></article>
+                  <span class="btn-area"><a href="" class="backButton" id="m_UserBack">Back</a> <span id="divider"> | </span>
+          <button class="button" id="m_UserNextStep" value="Next Step">Next Step</button>
+          </span> </section>
+                                </li>
+                                <li>
+                                    <section id="getprotected">
+                  <h2> Get Protected </h2>
+                  <hr>
+                  <article>
+            <div class="confirm"> <span>We noticed you protected your 2 PCs.</span> </div>
+            <br>
+            </span>
+            <h3>Select a device you want to protect:</h3>
+            <input id="rad_windows_pc" disabled name="install_option" type="radio" />
+            <span>Install Protection on another windows PC</span> <br>
+            <input id="rad_windows_mac" disabled name="install_option" type="radio" />
+            <span>Install Protection on Mac</span> <br>
+            <input id="rad_windows_mobile" checked name="install_option" type="radio" />
+            <span>Install Protection on mobile</span> <br>
+            <input id="rad_windows_tab" disabled name="install_option" type="radio" />
+            <span>Install Protection on Tablet</span> <br>
+          </article>
+                  <span class="btn-area"><a href="" class="backButton" id="m_GetProtectedBack">Back</a> <span id="divider"> | </span>
+          <button class="button" id="m_GetProtectedNextStep" value="Next Step">Next Step</button>
+          </span> </section>
+                                </li>
+                                <li>
+                                    <section id="textDownloadLink">
+                  <h2>Text Me Download Link</h2>
+                  <hr>
+                  <article> <span>The Country should autofill based on the user's current location</span> <br>
+            <span>Show a tooltip with the user's location (human readable is preferred)</span> <br>
+            <label for="country">Country</label>
+            <br>
+            <select id="countrySelect" width= "200px">
+                      <option value="select">Choose your Country</option>
+                      <option value="US">United States</option>
+                      <option value="UK">United Kingdom</option>
+                      <option value="JP">Japan</option>
+                    </select>
+            <br>
+            <label for="country">Phone Number</label><br>
+            <input id="m_PhoneNumber" type="text" width= "200px" />
+
+            <br>
+          </article>
+                  <span class="btn-area"><a href="" class="backButton" id="m_TextmeBack">Back</a> <span id="divider"> | </span>
+          <button class="button" id="m_TextmeNextStep" value="Next Step">Text me</button>
+          </span> </section>
+                                </li>
+                                <li>
+                                    <section id="smartActivation">
+        <h2>Read or Watch these Important Next Steps</h2>
+        <hr>
+        <article>
+        <span  id="left-txt">
+                <h3>Text Message sent to your phone</h3>
+                1. Receive text message on your android phone<br>
+                2. Start the installation process by clicking on the <b>&quot;Accept&quot;</b> button<br>
+                3. Once installed click <b>&quot;Open&quot;</b><br>
+                4. Start screen accept the <b>&quot;EULA&quot;</b><br>
+                5. Input your McAfee My Account Email (# @ ##).<br>
+                6. Add buddies. </span> <span  id="right-video">
+        <h3>
+        Watch this step by step video
+        </h5>
+        <img src="{{ url_for('static', filename='images/video.png') }}"> </span>
+        </article>
+        <span class="btn-area"><a href="" class="backButton" id="m_NextStepBack">Back</a> <span id="divider"> | </span>
+                <button class="button" id="m_NextStep" value="Next Step">Next Step</button>
+                </span>
+        </section>
+                                </li>
+                                <li>
+                                    <section id="register">
+                  <h2>Registration - Tell us about yourself?</h2>
+                  <hr>
+                  <article>
+            <label for="Email Address">Email Address :</label>
+            <br>
+            <input id="m_Email" type="text" width= "200px" />
+            <br>
+            <label for="Real Name">Real Name :</label>
+            <br>
+            <input id="m_Name" type="text" width= "200px"/>
+            <br>
+            <label for="Password"> Choose a Password:</label>
+            <br>
+            <input id="m_Password" type="password" width= "200px" />
+            <br>
+            <label for="Confirm Password"> Confirm the Password:</label>
+            <br>
+            <input id="m_ConfirmPassword" type="password"  width= "200px"/>
+            <br>
+            <input id="m_Spam" checked="checked" type="checkbox" />
+            Can we Spam you? </article>
+                  <span class="btn-area"><a href="" class="backButton" id="m_RegisterBack">Remind me later</a> <span id="divider"> | </span>
+          <button class="button" id="m_RegisterNextStep" value="Register">Register</button>
+          </span> </section>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
